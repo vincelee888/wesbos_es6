@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+    var name = 'vince' // pollutes global namespace
+    console.log(name) // "vince"
+
+    // Immediately-Invoked Function Expression (IIFE, pronounced "iffy") - Ben Altman
+    // scopes variables
+    (function () {
+      var name = 'vince'
+      // more code here
+    })()
+
+    console.log(name) // ""
+
+    for(var i = 0; i < 10; i++) {
+      console.log(i) // 0 to 9
+      setTimeout(function () {
+        console.log('number is: ' + i) // 10! loop has already run
+      }, 1000)
+    }
+
+    for(let i = 0; i < 10; i++) {
+      console.log(i) // 0 to 9
+      setTimeout(function () {
+        console.log('number is: ' + i) // 0 to 9!
+      }, 1000)
+    }
+    </script>
+  </head>
+</html>
