@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const names = ['vince', 'cat', 'monk']
+    
+    const fullNamesOld = names.map(function (name) {
+      reutrn `${name} lee`
+    })
+    
+    const fullNamesNewA = names.map((name) => { return `${name} lee` })
+    const fullNamesNewB = names.map((name) => `${name} lee`) // implicit return
+    const fullNamesNewC = names.map(name => `${name} lee`)
+    const fullNamesNewD = names.map(() => `bruce lee`)
+
+    // doesn't rebind this
+    
+    () => { console.log('wang') } // anonymous function
+    </script>
+  </head>
+</html>

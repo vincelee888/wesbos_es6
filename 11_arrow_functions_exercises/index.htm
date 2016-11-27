@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // list of elements, each with an attribute: data-time="hh:mm"
+    const totalSeconds = document
+      .queryselectorAll('[data-time]')
+      .filter((e) => e.textContent.includes('Flexbox'))
+      .map((e) => e.dataset.time) // dataset: object containing 'data-*' values
+      .map((t) => {
+        const [minutes, seconds] = t.split(':').map((part) => parseInt(part)) // in the console, true Numbers will turn blue
+        return minutes * 60 + seconds
+      })
+      .reduce((a, b) => a + b, 0)
+
+    // array of numbers to filter numbers greater than 70
+    const numbers = [1,46,35,235,2452,85]
+    const above70 = numbers.filter((n) => n > 70)
+    </script>
+  </head>
+</html>

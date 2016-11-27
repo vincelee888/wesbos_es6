@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    var foo = 100 // function scoped
+    let bar = 200 // block scoped - only available inside { }
+    const baz = 300 // block scoped
+
+    // block scoping:
+    function myFunc () {
+      let age = 100;
+      if (age > 12) {
+        let dogYears = age * 7
+        console.log(`You are ${dogYears} dog years old!`)
+      }
+      console.log(dogYears) // Uncaught ReferenceError: dogYears is not defined
+    }
+
+    myFunc()
+    </script>
+  </head>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    console.log(pizza) // undefined - variable is hoisted and accessible
+    /*
+    *
+    *
+    * TEMPORAL DEAD ZONE!!!
+    *
+    *
+    */
+    var pizza = 'deep dish 🍕🍕🍕'
+    console.log(pizza) // "deep dish 🍕🍕🍕"
+
+    console.log(pizza2) // ReferenceError: pizza is not defined
+    let pizza2 = 'deep dish 🍕🍕🍕'
+    </script>
+  </head>
+</html>

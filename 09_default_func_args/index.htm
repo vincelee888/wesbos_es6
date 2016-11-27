@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function calcBill(total, tax = 0.13, tip = 0.15) {
+      return total + (total * tax) + (total * tip)
+    }
+    const totalBill = calcBill(100, undefined, 0.25) // use default tax rate
+    console.log(totalBill)
+    </script>
+  </head>
+</html>

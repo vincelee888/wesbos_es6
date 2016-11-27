@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // 'this' scope:
+    // arrow function's this has parent scope
+    // old-style function's this has current scope
+
+    // use old-style function when you:
+    // * really need 'this'
+    // * need to bind method to object
+    
+    // * need to add prototype method
+    class Car {
+      constructor(make, colour) {
+        this.make = make
+        this.colour = colour
+      }
+    }
+    const beemer = new Car('bmw', 'black')
+    Car.prototype.summarise = () => {
+      return `This car is a ${this.colour} ${this.make}` // undefined!
+    }
+
+    // * need arguments object
+    const orderChildren = () => {
+      const children = Array.from(arguments) // ReferenceError: arguments not defined
+      console.log(children)
+      // ...
+    }
+
+    </script>
+  </head>
+</html>

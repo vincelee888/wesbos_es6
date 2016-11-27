@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    var a = 1
+    var b = 2 // ok: b === 2
+
+    let x = 1
+    x = 2 // ok: x === 2
+    let x = 3 // SyntaxError: Identifier 'x' has already been declared
+
+    let points = 20
+    let winner = false
+
+    if (points > 15) {
+      let winnder = true // brand new variable! (block scoped)
+    }
+
+    const foo = "bar" // can't re-assign
+    foo = "baz" // Uncaught TypeError: Assignment to constant variable
+
+    const person = {
+      name: 'vince'
+    }
+
+    person = {
+      name: 'Vincent'
+    } // Uncaught TypeError: Assignment to constant variable
+
+    person.name = 'Vinceybaby' // ok
+
+    const newPerson = {
+      surname: 'lee'
+    }
+
+    const mrLee = Object.freeze(newPerson) // truly immutable
+    mrLee.surname = 'bibble'
+
+    console.log(mrLee.surname) // 'lee'
+    </script>
+  </head>
+</html>
