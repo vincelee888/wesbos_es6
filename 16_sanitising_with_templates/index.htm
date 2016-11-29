@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const aboutMe = `I love haxx1ng <img src="http://l33t.com/" onload="alert('pwned!1!!') />`
+      document.body.innerHTML = aboutMe // uh oh...
+
+      function sanitise = (strings, ...values) {
+        const dirty = strings.reduce(prev, next, i) => {`${prev}${next}${values[i] || ''}`}, '')
+        return sanitiseLibrary.sanitise(dirty)
+      }
+
+      const aboutMe = sanitise`I love haxx1ng <img src="http://l33t.com/" onload="alert('pwned!1!!') />`
+      document.body.innerHTML = aboutMe // uh oh...
+
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

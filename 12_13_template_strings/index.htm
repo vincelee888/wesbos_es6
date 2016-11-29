@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // interpolation
+    const name = 'vince'
+    const timeOfDay = 'evening'
+    const age = 36
+    const greeting = `good ${timeOfDay}, ${name}! you are ${age * 7} dog years old!`
+    console.log(greeting)
+
+    // multilines
+    const markup = `
+      <header>
+        <h1>Hello, ${name}</h1>
+        <p>You are ${age * 7} dog years old!</p>
+      </header>
+    `
+
+    document.body.innerHTML = markup
+
+    // repeaters
+    const dogs = [
+      {name: 'fido', age: 2},
+      {name: 'spot', age: 4},
+      {name: 'butch', age: 5}
+    ]
+
+    const markup = `
+    <ul>
+      ${dogs.map(d => `
+        <li>
+          ${dog.name} is ${dog.age * 7} years old
+        </li>
+      `).join('') }
+    </ul>
+    `
+
+    document.body.innerHTML = markup
+
+
+    // logic in views
+    const songA = {
+      name: 'transmission',
+      artist: 'joy division',
+      featuring: 'angst',
+      members: ['morris', 'sumner', 'curtis', 'hook']
+    }
+
+    const songB = {
+      name: 'she\'s lost control',
+      artist: 'joy division'
+    }
+
+    function renderMembers(members) {
+      return `
+        <ul>
+          $(members.map(m => `<li>${m}</li>`).join('')
+        </ul>
+      `
+    }
+
+    const markup = `
+      <div>
+        <p>
+          ${song.name} - ${song.artist}
+          ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+          ${renderMembers(song.members)}
+      </div>
+    `
+
+    // react-style render function
+
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

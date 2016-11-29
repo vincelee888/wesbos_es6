@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function highlight (strings, ...values) { // ... 'rest' operator the rest of the values passed as an array
+       console.log(strings) // array of strings that are concatenated
+       console.log(values) // array of variables injected into string
+       strings.length === values.length + 1 // true; use this property to zip the arrays together
+
+       let str = ''
+       strings.forEach(string, i) => {
+         str += `${string} <span>${(values[i] || '')}</span>` // undefined guard}
+       }
+
+       return str
+    }
+
+    const name = 'general miaow'
+    const age = 10
+
+    const sentence = highlight`my cat's name is ${name}` // tagged with function to run string through
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

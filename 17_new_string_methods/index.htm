@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const message = 'Hello World'
+
+    // all case sensitive
+    
+    // .startsWith()
+    message.startsWith('Hello') // true
+    message.startsWith('llo', 2) // skip first 2 characters
+
+    // .endsWith()
+    message.endsWith('orld') // true
+    message.endsWith('or', 7) // skip first 7 characters
+
+    // .includes()
+    message.includes('llo w') // true
+
+    // .repeat()
+    function lpad(str, length = 10) {
+      return `${' '.repeat(length - str.length)}{$str}`
+    }
+
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

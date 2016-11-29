@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+      const first = 'Vince'
+      const last = 'Lee'
+
+      function addAbbreviations(strings, ...values) {
+        const dict = {
+          HTML: 'Hyper Text Markup Language',
+          CSS: 'Cascading Style Sheets',
+          JS: 'JavaScript'
+        }
+        const abbr = values.map(v => {
+          if(dict[v]) {
+            return `<abbr title="{$dict[value]}">${value}</abbr>`
+          }
+          return value
+        })
+
+        return strings.reduce(p => (sentence, string, i) => { 
+          return `${sentence}${string}${abbr[i] || ''`
+        }, '')
+      }
+
+      const sentence = addAbbreviations`Hello, my name is ${first} ${last}, and I love to code ${'HTML'}, ${'CSS'}, and ${'JS'}`
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>
