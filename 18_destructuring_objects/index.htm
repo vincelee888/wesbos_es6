@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const person = {
+      first: 'vince',
+      last: 'lee',
+      title: 'software monkey',
+      links: {
+        website: 'https://vincelee888.github.io'
+        social: {
+          twitter: 'https://twitter.com/vincelee888',
+          github: 'https://github.com/vincelee888'
+        }
+      }
+    }
+
+    const { first, last } = person
+
+    console.log(first) // 'vince'
+
+    const { twitter, facebook } = person.links.social // nested values
+
+    const { title:job } = person // stores title in variable 'job'
+
+    const settings = {
+      width: 300,
+      color: 'black'
+    }
+
+    const { width = '220px', height = '120px', fontSize = '13px' } = settings // default values if not available
+
+
+    
+
+
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

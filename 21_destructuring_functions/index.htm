@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function convert(amount) {
+      const conversions = {
+        USD: amount * 0.80,
+        EUR: amount * 1.21,
+        YEN: amount * 0.4
+      }
+
+      return conversions
+    }
+
+    const { USD, EUR } = convert(100)
+
+    console.log(USD, EUR)
+
+    function tipCalc({total = 100, tip = 0.15, tax = 0.15} = {}) { // expect an object and automatically destructure; default value for parameter object
+      return total + (tip + total) + (tax * total)
+    }
+
+    const bill = tipCalc({total: 120 })
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>
