@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const apple = {
+      color: 'pink',
+      size: 'large',
+      type: 'pink lady'
+    }
+
+    for(let prop of Object.keys(apple)) { // apple.entries() is coming in ES2017, or is available with polyfill
+      console.log(`${prop}: ${apple[prop]}`)
+    }
+
+    for(let prop in apple) { // recommended til ES2017
+      console.log(`${prop}: ${apple[prop]}`)
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

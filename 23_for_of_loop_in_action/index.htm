@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const cuts = ['fillet', 'rump', 'flank', 'rib']
+    
+    const iterator = cuts.entries() // ArrayIterator
+
+    iterator.next() // an object describing iteration: { value: [ 0, 'fillet' ], done: false }
+
+    for(let [i, cut] of cuts.entries()) {
+      console.log(`${cut} is the ${i} item`)
+    }
+
+    function sum() {
+      console.log(arguments) // all the arguments passed to function. not quite an array, its _proto_ is an object. it has a Symbol of iterator, and a length, which allows us to loop over it
+      let total = 0
+      for(let num of arguments) { // can't use reduce, as its not an array! could use Array.from()
+        total += num
+      }
+      return total
+    }
+
+    const name = 'Vince Lee'
+    for(let char of name) {
+      console.log(char)
+    }    
+
+    const ps = document.querySelectorAll('p') // returns NodeList!
+    for(let p of ps) {
+      console.log(p.textContent)
+    }
+    </script>
+  </head>
+  <body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+  </body>
+</html>

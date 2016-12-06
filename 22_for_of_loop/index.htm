@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const cuts = ['fillet', 'rump', 'flank', 'rib']
+
+    for(let i = 0; i < cuts.length; i++) {
+      console.log(cuts[i])
+    }
+
+    cust.forEach((cut) => {
+      console.log(cut)
+      // can't break/continue/yield
+    })
+
+    for(let index in cuts) { // gets index
+      console.log(cuts2[index]) // this will return any properties/functions added to Array prototype
+    }
+
+    for (let cut2 of cuts) { // can use with any collection
+      console.log(cut2)
+      if (cut === 'rump') break // drop out of loop
+      if (cut === 'flank') continue // skip to next iteration
+    }
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>
