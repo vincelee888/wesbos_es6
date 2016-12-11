@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const inventors = ['Einstein', 'Michelangelo', 'Tesla']
+      const newbies = ['Musk', 'Woz']
+
+      inventors.push.apply(inventors, newbies) // bit odd to read
+      inventors.push(...newbies)
+
+      function hi(first, last) {
+        console.log(`Hi ${first} ${last}`)
+      }
+      const name = ['Vince', 'Lee']
+      hi(...name)
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

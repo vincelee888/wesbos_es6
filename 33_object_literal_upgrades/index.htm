@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const first = 'vince',
+    const last = 'lee',
+    const age = 36
+
+    const vince = { first, name, age } // don't need to repeat field names
+    console.log(vince.age) // 36
+
+    const modal = {
+      create() { // no need for "create: function()"
+
+      },
+      open() {
+
+      },
+      close() {
+
+      }    
+    }
+
+    const key = 'pocketColor'
+    const value = 'red'
+    
+    const tshirt = {
+      [key]: value,
+      [`${key}Opposite`]: invertColor(value) // dynamically compute property on object creation
+    }
+
+    const keys = ['size', 'color', 'weight']
+    const values = ['large', 'blue', '100kg']
+
+    const shirt = {
+      [keys.shift()]: values.shift(),
+      [keys.shift()]: values.shift(),
+      [keys.shift()]: values.shift()
+    }
+
+    console.log(shirt.weight) // '100kg'
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

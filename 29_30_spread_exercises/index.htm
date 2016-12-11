@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const heading = document.querySelector('h1')
+    const chars = [...heading]
+    heading.innerHTML = chars
+      .map((c) => $`<span>{c}</span>`)
+      join('')
+
+    const people = document.querySelectorAll('p')
+    const names = [...people] // alternative to Array.from()
+      .map((n) => n.textContent)
+
+    const deepDish = {
+      name = 'deep dish',
+      ingredients = ['pepperoni', 'salami', 'ham']
+    }
+
+    const shoppingList = ['flour', 'milk', ...deepDish.ingredients]
+
+    const comments = [
+      id: 1234561, text: 'you rock!',
+      id: 1234562, text: 'you rock!',
+      id: 1234563, text: 'you suck!',
+      id: 1234564, text: 'you rock!'      
+    ]
+    const badCommentIndex = comments.findIndex((c) => c.text.includes('suck'))
+    const editedComments = [...comments.slice(0, badCommentIndex), ...comments.slice(badCommentIndex + 1)]
+    </script>
+  </head>
+  <body>
+    <h1>SPREAD!</h1>
+    <p>Vince</p>
+    <p>Monk</p>
+    <p>Cat</p>
+  </body>
+</html>

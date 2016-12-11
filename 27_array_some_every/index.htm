@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const people = [
+      {
+        firstname: 'Vince',
+        lastname: 'Lee',
+        age: '36'
+      },
+      {
+        firstname: 'Cat',
+        lastname: 'Goodall',
+        age: '26'
+      }
+    ]
+
+    const vince = people.find((p) => p.firstname === 'vince')
+    console.log(vince.age)
+
+    const catIndex = people.findIndex((p) => p.lastname === 'Goodall')
+    console.log(people[catIndex].firstname)
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

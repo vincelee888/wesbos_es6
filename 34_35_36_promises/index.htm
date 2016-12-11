@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+    // using promises
+    const postsPromise = fetch('http://www.myapi.com/endpoint') // fetch is built-in browser function
+    postsPromise 
+      .then((result) => result.json())
+      .then((data) => { console.log(data) })
+      .catch((err) => { console.log(err) }) // catch errors from any of the thens 
+
+    const promise = new Promise((resolve, reject) => {
+      // do some long-running action
+      resolve('woo, finished')
+    })
+
+    p 
+      .then((data) => { console.log(data) }) // 'woo, finished'
+      
+    // chaining promises
+
+    function getPostById(id) {
+      return new Promise((resolve, reject) => {
+        const post = posts.find((p) => p.id === id)
+        if(post) {
+          resolve(post)
+        }else {
+          reject(Error('no post found'))
+        }
+      })
+    }
+
+    function hydrateAuthor(post) => {
+      return new Promise((resolve, reject) => {
+        const author = authors.find((a) => a.name === post.author)
+        if(author) {
+          post.author = author
+          resolve(post)
+        }else {
+          reject(Error('no author found'))
+        }
+      })
+    }
+
+    getPostById(123)
+      .then((post) => {
+        return hydrateAuthor(post)
+      })
+      .then((hydratedPost) => {
+        console.log(hydratedPost)
+      })
+      .catch(err) => {
+        console.log(err)
+      }
+
+    // waiting for multiple promises
+
+    const weather = new Promise(...)
+    const tweets = new Promise(...)
+
+    Promise
+      .all([weather, tweets])
+      .then((responses) => {
+        const [weatherData, tweetData] = responses
+      })
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

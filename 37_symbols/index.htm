@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // number, string, object, boolean, null, undefined, symbol
+    // unique id to avoid naming collisions
+    const vince = new Symbol('vince') // parameter is a descriptor
+    console.log(vince) // Symbol(vince)
+    const vince2 = new Symbol('vince')
+    vince === vince2 // false 
+
+    const class = {
+      'mork': { grade: 50, gender: 'male' },
+      'mindy': { grade: 90, gender: 'female' },
+      'mindy': { grade: 90, gender: 'female' } // overwritten
+    }
+    const classRoom = {
+      [Symbol('mork')]: { grade: 50, gender: 'male' },
+      [Symbol('mindy')]: { grade: 90, gender: 'female' },
+      [Symbol('mindy')]: { grade: 60, gender: 'female' } // overwritten
+    }
+
+    for (person in classRoom) {
+      console.log(person) // nothing - Symbols not enumerable; often used for private fields
+    }
+
+    const symbols = Object.getOwnPropertySymbols(classRoom)    
+    const data = symbols.map((sym) => classRoom[sym])
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

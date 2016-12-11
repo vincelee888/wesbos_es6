@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const people = document.querySelectorAll('p') // returns a NodeList
+    const peopleArray = Array.from(people) // parameter is an object that is Array-ish
+    const names = peopleArray.map((p) => p.textContent)
+
+    const peopleNames = Array.from(people, ((p) => p.textContent) // second argument is mapping function
+
+    function sum () {
+      return Array.from(arguments) // arguments is not an Array, has a length, but not 
+        .reduce((a, b) => a + b, 0)
+    }
+
+    sum(3,34,23,6,50,45)
+
+    const arrayOfNumbers = Array.of(23,46,4,324,13,6,8879)
+
+    </script>
+  </head>
+  <body>
+    <p>Vince</p>
+    <p>Cat</p>
+    <p>Wes</p>
+  </body>
+</html>

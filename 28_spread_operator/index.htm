@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const meat = ['ham', 'pepperoni', 'salami']
+    const veg = ['pineapple', 'spinach']
+    const toppings = [...meat, ...veg]
+
+    const fridayToppings = toppings // by reference
+    fridayToppings[0] = 'beef' // overwrites toppings[0] too!
+    const fridayToppings2 = [].concat(toppings)
+    const fridayToppings3 = [...toppings]
+
+    const name = 'vince'
+    const chars = [...name] // ['v', 'i', 'n', 'c', 'e']
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
