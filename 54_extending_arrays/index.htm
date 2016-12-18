@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    class MovieCollection extends Array {
+      constructor (name, ...items) {
+        super(...items) // initialise Array
+        this.name = name
+      }
+
+      topRated (limit = 3) {
+        return this.sort((a, b) => {
+          a.stars > b.stars
+            ? -1
+            : 1
+        }).slice(0, limit)
+      }
+    }
+
+    const movies = new MovieCollection('my movies',
+      { name: 'Mad Max', stars: 10 },
+      { name: 'Gravity', stars: 8 },
+      { name: 'Legend', stars: 1 }
+    )
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

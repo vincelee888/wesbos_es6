@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    class Doggle {
+      constructor (name, breed) {
+        this.name = name
+        this.breed = breed
+      }
+
+      bark () { 
+        console.log(`bark - my name is ${this.name}`)
+      }
+
+      static info () {
+        console.log('dogs smell')
+      }
+
+      get description() {
+        return `${name} is a ${breed}`
+      }
+
+      set nickname (value) {
+        this.nick = value.trim()
+      }
+
+      get nickname () {
+        return this.nick
+      }
+    }
+
+    const jake = new Doggle('jake', 'spaniel')
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

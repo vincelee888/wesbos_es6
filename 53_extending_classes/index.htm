@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    class Animal {
+      constructor (name) {
+        this.name = name
+        this.thirst = 100
+        this.belly = []
+      }
+      drink () {
+        this.thirst -= 10
+        return this.thirst
+      }
+      eat (item) {
+        this.belly.push(item)
+        return this.belly
+      }
+    }
+
+    const rhino = new Animal('ron')
+
+    class Doggle extends Animal {
+      constructor (name, breed) {
+        super(name) // 'this' is not defined until call the extended class' constructor
+        this.breed = breed
+      }
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

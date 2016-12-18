@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // same inheritance, different syntax
+    
+    // old
+    function Dog (name, breed) {
+      this.name = name
+      this.breed = breed
+    }
+
+    Dog.prototype.bark = function () {
+      console.log(`Bark - my name is ${this.name}`)
+    }
+
+    const jake = new Dog('Jake', 'Spaniel')
+
+    // can hack in new behaviour after decclaration
+    Dog.prototype.scratchBalls = function () {
+      console.log('where are my balls?')
+    }
+
+    // instances have new behaviour
+    jake.scratchBalls()
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
