@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // can only contain objects
+    let vince = {
+      id: 1,
+      name: 'Vince'
+    }
+    let cat = {
+      id: 2,
+      name: 'Cat'
+    }
+    const weakPeople = new WeakSet()
+    weakPeople.add(vince)
+    weakPeople.add(cat)
+
+    // can not loop over it
+    for(const p of weakPeople) { // Uncaught Type error: is not iterator
+      console.log(p)
+    }
+
+    vince = null
+
+    // wait for garbage collection
+
+    console.log(weakPeople) // only contains cat - contents are only weakly held
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function* listPeople() { // generator function denoted by asterisk
+      yield 'Vince'
+      yield 'Cat'
+      yield 'Monk'
+    }
+
+    for(let person of listPeople) {
+      console.log(person)
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

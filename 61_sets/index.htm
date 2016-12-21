@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const people = new Set() // similar to array, no index
+    people.add('Vince')
+    people.add('Vince') // doesn't do anything; can't add existing key
+    people.add('Cat')
+
+    people[1] // error, no index
+
+    const peopleIterator = people.values() // returns iterator
+    peopleIterator.next() // { value: 'Vince', done: false }
+
+    people.keys() // same as people.values(), as seen by:
+    people.entries() // SetIterator { ['Vince', 'Vince'], ['Cat', 'Cat'] }
+
+    people.delete('Vince') // delete single item
+
+    people.clear() // empty Set
+
+    const dogs = ['jake', 'puggle']
+    const dogSet = new Set(dogs)
+
+    dogSet.has('Sheba') // false
+
+    for(const d of dogSet) {
+      console.log(d)
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

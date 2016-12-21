@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    const customers = new Set(['Vince', 'Cat'])
+    customers.add('Monk')
+
+    const queue = customers.values()
+
+    console.log(queue.next().value) // 'Vince'
+    console.log(queue) // now only contains 'Cat' and 'Monk'
+    
+    customers.add('Skinny Pete')
+    customers.add('Danny Fitz')
+
+    console.log(queue.next().value) // 'Cat'
+    console.log(queue) //  contains 'Monk', 'Skinny Pete', 'Danny Fitz'
+    
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

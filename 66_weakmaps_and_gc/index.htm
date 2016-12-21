@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    let dog1 = { name: 'jake' }
+    let dog2 = { name: 'puggles' }
+
+    const strong = new Map()
+    const weak = new WeakMap()
+
+    strong.set(dog1)
+    weak.set(dog2)
+
+    console.log(strong.size) // 1
+    console.log(weak.size) // undefined
+
+    dog1 = null
+    dog2 = null
+
+    console.log(strong) // still contains jake
+    console.log(weak) // empty
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

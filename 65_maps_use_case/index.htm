@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // same functionality as Object, but...
+    // A Map can use objects as keys
+
+    const clickCounts = new Map()
+    const buttons = document.querySelectorAll('.btn')
+
+    buttons.forEach((b) => {
+      clickCounts.set(b, 0)
+      b.addEventListener('click', function () {
+        const val = clickCounts.get(this)
+      })
+    })
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

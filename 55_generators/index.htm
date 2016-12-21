@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // readable sequential, inter-dependent ajax requests
+    // avoid callback/promise nesting hell
+
+    function ajax(url) {
+      fetch(url)
+        .then(data => data.json())
+        .then(data => gen.next(data))
+    }
+
+    function* steps() {
+      const beers = yield ajax("https://beer.com/beers")
+      const breweryInfo = yield ajax(`https://beer.com/beers/${beers[0].breweryId}`)
+      const country = yield ajax(`https://beer.com/becountries/${breweryinfo.countryId}`)
+    }
+
+    const gen = steps()
+    gen.next() // trigger
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

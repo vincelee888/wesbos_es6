@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function* listPeople() { // generator function denoted by asterisk
+      yield 'Vince'
+      yield 'Cat'
+      yield 'Monk'
+    }
+
+    const people = listPeople() // people is generator
+    const firstCall = people.next() // { value: 'Vince', done: false }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    // allow us to intercept default properties
+    const person = {
+      'name': 'vince',
+      'age': 36
+    }
+
+    const personProxy = new Proxy(person, {
+      get(target, name) { // intercept or 'trap' any get on the {target}'s property, called {name}
+        console.log('someone is asking for', target, name)
+        return target[name].toUpperCase()
+      },
+      set(target, name, value) {
+        if(typeof value === 'string') {
+          target[name] = value.trim()
+        }
+      }
+    })
+
+    personProxy.aProperty = '    foo bar        '
+    console.log(personProxy.aProperty) // 'FOO BAR' - trims it in the set, uppercase in get
+
+    const phoneHandler = {
+      set(target, name, value) {
+        target[name] = value.match(/[0-9]/g).join('') // clean to just numbers
+      }
+    }
+
+    const phoneNumbers = new Proxy({}, phoneHandler)
+
+    phoneNumbers.home = '+44 (0)161 123456'
+    console.log(phoneNumbers.home) = '440161123456'
+
+
+    // use capture user error when using your objects
+    // eg person.id, person.ID, or person.Id???
+
+    const safeHandler = {
+      set(target, name, value) {
+        const likeKey = Object.keys(target).find((k) => k.toLowerCase() === name.toLowercase())
+        if(!(name in target) && likeKey) {
+          throw new Error(`did you mean ${likeKey}?`)
+        }
+      }
+    }
+
+    const safety = new Proxy({ id: 100 }, safeHandler)
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
